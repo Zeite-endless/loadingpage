@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            font-size: 48px;
+            text-align: center;
+            display: block;
+            justify-content: center;
+            justify-items: center;
+            position: absolute;
+        }
+
+        img {
+            width: 100vw;
+            height: 100vh
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b6e0b072897469.5bf6e79950d23.gif">
+    </main>
+
+    <script>
+        function espereNSegundos() {
+            var num1 = 1
+
+            new Promise(function (resolve, reject) {
+
+                if (Number.isInteger(num1)) {
+                    setTimeout(() => {
+                        resolve()
+                    }, 5000);
+                } else {
+                    setTimeout(() => {
+                        reject()
+                    }, 1000);
+                }
+            }).then(res => {
+                document.getElementById("main").innerHTML =
+                    `<img src="https://images.squarespace-cdn.com/content/v1/5b24049c5ffd20875baad134/1529093080838-LF0XV8I7HUY3QHKV91KV/ke17ZwdGBToddI8pDm48kIIB6g8eAjVUZO-azrWbOQYUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcXIGCwurDmULFP4nxlt0Sld7xFjq3UyfSZjh_gMfnu94ZDKCYy_T7OYhOyKv8zDfN/black+and+green+background.jpg?format=1500w">`
+            }).catch(res => {
+                document.getElementById("main").innerHTML =
+                    `<img src="https://webinsider.com.br/wp-content/uploads/2019/01/Erro-404-1-1-1024x645.jpg">`
+            })
+        }
+        espereNSegundos()
+    </script>
+</body>
+
+</html>
